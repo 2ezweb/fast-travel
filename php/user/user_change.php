@@ -11,7 +11,7 @@ $first_name = $_POST['first_name'];
 $phone = $_POST['phone'];
 
 $check_new = $pdo->query("SELECT * FROM user WHERE login='$new_username'");
-if($username == $new__username){
+if($username == $new_username){
     $stmt = $pdo->prepare("UPDATE user SET login = ?, password = ?, mail = ?, last_name = ?, first_name = ?, phone = ? WHERE login='$username'");
     $stmt->execute([$new_username, $password, $mail, $last_name, $first_name, $phone]);
 
