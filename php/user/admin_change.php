@@ -8,7 +8,7 @@ $password = $_POST['password'];
 $mail = $_POST['mail'];
 
 $check_new = $pdo->query("SELECT * FROM user WHERE login='$new_username'");
-if($username == $new__username){
+if($username == $new_username){
     $stmt = $pdo->prepare("UPDATE user SET login = ?, password = ?, mail = ? WHERE login='$username'");
     $stmt->execute([$new_username, $password, $mail]);
     
